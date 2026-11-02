@@ -13,10 +13,12 @@
             <div class="card-body p-0 py-2">
                 <a href="<?=base_url()?>lesson/course/<?=$course->CourseID?>"
                     class="btn btn-disabled mb-0 course-menu shadow-none <?php if($course_menu=="Kelas"){echo "active-menu";}?>">Misi</a>
-                    <a href="<?=base_url()?>siswa/leaderboard/<?=$course->CourseID?>"
+                <a href="<?=base_url()?>siswa/leaderboard/<?=$course->CourseID?>"
                     class="btn btn-disabled mb-0 course-menu shadow-none <?php if($course_menu=="Leaderboard"){echo "active-menu";}?>">Leaderboard</a>
                 <a href="<?=base_url()?>siswa/aktivitas/<?=$course->CourseID?>"
                     class="btn btn-disabled mb-0 course-menu shadow-none <?php if($course_menu=="Aktivitas"){echo "active-menu";}?>">Aktivitas</a>
+                <a href="<?=base_url()?>siswa/sertifikat/<?=$course->CourseID?>"
+                    class="btn btn-disabled mb-0 course-menu shadow-none <?php if($course_menu=="Sertifikat"){echo "active-menu";}?>">Sertifikat</a>
                 <a href="<?=base_url()?>siswa/teman/<?=$course->CourseID?>"
                     class="btn btn-disabled mb-0 course-menu shadow-none <?php if($course_menu=="Teman"){echo "active-menu";}?>">Teman</a>
                 <a href="<?=base_url()?>siswa/informasi/<?=$course->CourseID?>"

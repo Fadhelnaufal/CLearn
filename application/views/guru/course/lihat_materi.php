@@ -30,47 +30,50 @@
             </div>
         </div>
     </div>
-    <p class="fw-bold text-white small mt-4 text-uppercase"> <i class="fas fa-dot-circle text-warning me-1"></i>materi</p>
+    <p class="fw-bold text-dark small mt-4 text-uppercase"> <i class="fas fa-dot-circle text-warning me-1"></i>materi</p>
     <div class="row mt-1">
         <div class="col-md-9 mt-2">
 
             <div class="card">
                 <div class="card-body">
 
-                    <p class="text-white fw-bold fs-2 mb-4"><?= $lesson['LessonTitle'] ?>
+                    <p class="text-dark fw-bold fs-2 mb-4"><?= $lesson['LessonTitle'] ?>
                     </p>
 
-                    <div class="text-white"><?= $lesson['LessonContent'] ?></div>
+                    <div class="text-dark"><?= $lesson['LessonContent'] ?></div>
 
                 </div>
             </div>
         </div>
 
-        <div class="col-md-3 mt-2">
+        <div class="col-md-3">
             <?php if (!empty($lesson['File'])) { ?>
-            <div class="card mb-2 bg-darkpurple">
-                <div class="card-body ">
-                    <p class="text-white fw-bold fs-5">Berkas Lampiran</p>
-                    <p class="text-white mt-3"><i class="fas fa-file me-2"></i> <?=$lesson['File']?> </p>
-                    <a href="<?= base_url('assets/lesson/' . $lesson['File']) ?>" target="_blank"
-                        class="btn btn-primary"><i class="fas fa-download me-2"></i> Download</a>
-                </div>
+            <div class="card card-body mb-2 bg-lightyellow mt-4">
+                <p class="text-dark text-center fw-bold fs-5">Berkas Lampiran</p>
+                <p class="text-dark text-center mt-3"><i class="fas fa-file me-2"></i> <?=$lesson['File']?> </p>     
+                <a href="<?= base_url('assets/lesson/' . $lesson['File']) ?>" target="_blank"
+                    class="btn btn-white mt-3"><i class="fas fa-download me-2"></i> Download</a>
             </div>
             <?php } ?>
-            <div class="card card-body bg-darkgreen mb-2">
-                <h1 class="text-white"><?=$countUserLesson?></h1>
-                <p class="text-white small">Siswa telah membaca materi</p>
+            <div class="card card-body bg-lightyellow mt-4">
+                <h1 class="text-purple text-center"><?=$countUserLesson?></h1>
+                <p class="text-dark text-center">Siswa telah membaca materi</p>
                 <a href="<?=base_url()?>guru/result/<?=$lesson['LessonID']?>/<?=$CourseID?>"
-                    class="btn btn-warning mt-3"><i class="fas fa-eye me-2"></i> Lihat </a>
+                    class="btn btn-white mt-3"><i class="fas fa-eye me-2"></i> Lihat </a>
             </div>
-            <a class="btn btn-warning  "
+            <div class="card card-body mt-4">
+            <a class="btn btn-warning mt-2"
                 href="<?= base_url('guru/editLesson/' . $CourseID . '/' . $lesson['LessonID']) ?>">
-                <i class="fas fa-edit"></i> Edit
+                <i class="fas fa-edit"></i> Edit Materi
             </a>
-            <a class="btn btn-danger "
+            <a class="btn btn-danger mt-2"
                 href="<?= base_url('guru/deleteLesson/' . $CourseID . '/' . $lesson['LessonID']) ?>">
-                <i class="fas fa-trash"></i> Hapus
+                <i class="fas fa-trash"></i> Hapus Materi
             </a>
+            </div>
+            <div class="card card-body mt-4 d-none d-sm-block">
+                <img src="<?=base_url()?>assets/img/vector/Artboard 10.svg" class="w-100" alt="gambar guru">
+            </div>
         </div>
     </div>
 

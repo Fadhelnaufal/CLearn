@@ -55,7 +55,7 @@ class Course_model extends CI_Model
     {
         $id = $this->session->userdata('id_user');
         $this->db->where('TeacherID', $id);
-        $this->db->limit(6);
+        $this->db->limit(20);
 
         $this->db->order_by('CourseID', 'desc');
 
@@ -66,7 +66,7 @@ class Course_model extends CI_Model
         $id = $this->session->userdata('id_user');
         $this->db->join('user_course', 'course.CourseID = user_course.CourseID');
         $this->db->where('user_course.UserID', $id);
-        $this->db->limit(6);
+        $this->db->limit(20);
         $this->db->order_by('user_course.JoinDate', 'desc');
         return $this->db->get('course')->result();
     }
@@ -74,7 +74,7 @@ class Course_model extends CI_Model
     {
         $id = $this->session->userdata('id_user');
         $this->db->where('TeacherID', $id);
-        $this->db->order_by('CourseID', 'desc');
+        $this->db->order_by('CourseID', 'asc');
         return $this->db->get('course')->result();
     }
     public function getCourseSiswa()
@@ -82,7 +82,7 @@ class Course_model extends CI_Model
         $id = $this->session->userdata('id_user');
         $this->db->join('user_course', 'course.CourseID = user_course.CourseID');
         $this->db->where('user_course.UserID', $id);
-        $this->db->order_by('user_course.JoinDate', 'desc');
+        $this->db->order_by('user_course.JoinDate', 'asc');
         return $this->db->get('course')->result();
     }
 
@@ -100,6 +100,11 @@ class Course_model extends CI_Model
         $id = $this->session->userdata('id_user');
         $query = $this->db->query('SELECT *,course.CourseID as id FROM course WHERE course.CourseID NOT IN (SELECT course.CourseID FROM course INNER JOIN user_course ON course.CourseID=user_course.CourseID AND user_course.UserID=' . $id . ')');
         return $query->result();
+    }
+    public function totalCourse(){
+        $id = $this->session->userdata('id_user');
+        $this->db->from('course');
+        return $this->db->count('course');
     }
     public function course($CourseID)
     {
@@ -150,6 +155,14 @@ class Course_model extends CI_Model
         $row = $this->db->get('course')->row();
         return $row->CourseLogo;
     }
+    public function getOldSertif($CourseID)
+    {
+        $id = $this->session->userdata('id_user');
+        $this->db->where('TeacherID', $id);
+        $this->db->where('CourseID', $CourseID);
+        $row = $this->db->get('course')->row();
+        return $row->Sertifikat;
+    }
     public function deleteCourse($CourseID)
     {
         $id = $this->session->userdata('id_user');
@@ -164,6 +177,14 @@ class Course_model extends CI_Model
         $this->db->delete('user_course');
     }
     public function teman($CourseID)
+    {
+        $this->db->join('course', 'user_course.CourseID=course.CourseID');
+        $this->db->join('users', 'users.UserID=user_course.UserID');
+        $this->db->where('course.CourseID', $CourseID);
+        $this->db->order_by('users.UserName', 'asc');
+        return $this->db->get('user_course')->result();
+    }
+    public function sertifikat($CourseID)
     {
         $this->db->join('course', 'user_course.CourseID=course.CourseID');
         $this->db->join('users', 'users.UserID=user_course.UserID');
@@ -246,11 +267,11 @@ class Course_model extends CI_Model
         $id = $this->session->userdata('id_user');
         if ($XP < 500) {
             $level = 0;
-        } elseif ($XP < 1000) {
-            $level = 1;
         } elseif ($XP < 2000) {
-            $level = 2;
+            $level = 1;
         } elseif ($XP < 4000) {
+            $level = 2;
+        } elseif ($XP < 6000) {
             $level = 3;
         } elseif ($XP < 8000) {
             $level = 4;
@@ -271,6 +292,19 @@ class Course_model extends CI_Model
         $this->db->order_by('user_course.courseXP', 'desc');
         $this->db->limit(10);
         return $this->db->get('user_course')->result();
+        
+    }
+    public function getAllLeaderboard(){
+        # code...SELECT * FROM `user_course` INNER JOIN users ON user_course.UserID=users.UserID WHERE user_course.UserID=1 AND CourseID=1 ORDER BY user_course.courseXP DESC LIMIT 10
+        // $this->db->select('user_course.UserID', 'SUM(courseXP) as xp');
+        // $this->db->select('users.UserID');
+        // $this->db->join('users', 'user_course.UserID=users.UserID', 'SUM(courseXP) as xp');
+        // $this->db->order_by('user_course.courseXP', 'desc');
+        // $this->db->limit(10);
+        // return $this->db->get('user_course')->result();
+        $sql = "SELECT sum(courseXP) as totalskor FROM user_course";
+        $result = $this->db->query($sql);
+        return $result->row()->totalCourse;
     }
     public function countAllLesson()
     {

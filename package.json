@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@material-tailwind/html": "^1.2.3"
+  }
+}

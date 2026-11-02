@@ -30,7 +30,7 @@
             </div>
         </div>
     </div>
-    <p class="fw-bold text-white small mt-4 text-uppercase"> <i class="fas fa-dot-circle text-warning me-1"></i>edit materi</p>
+    <p class="fw-bold text-dark small mt-4 text-uppercase"> <i class="fas fa-dot-circle text-warning me-1"></i>edit materi</p>
 
     <div class="card card-body mt-3">
 
@@ -40,26 +40,26 @@
             <div class="form-group ">
                 <label class="">Judul Materi</label>
                 <div class="col-sm-12">
-                    <input type="text" class="form-control text-white" name="title"
+                    <input type="text" class="form-control text-dark" name="title"
                         value='<?= $lesson['LessonTitle'] ?>' placeholder="Judul Artikel" required>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="">File </label>
                 <div class="col-md-8">
-                    <input type="file" name="file" class='form-control  text-white'>
+                    <input type="file" name="file" class='form-control  text-dark'>
                 </div>
             </div>
 
             <div class="form-group row">
                 <label class="">Isi Materi </label>
-                <textarea name="content" id="add_materi" class="text-lights form-control" cols="30" rows="30" required>
+                <textarea name="content" id="add_materi" class="text-dark form-control" cols="30" rows="30" required>
                 <?= $lesson['LessonContent'] ?>
                 </textarea>
             </div>
 
             <div class="form-group row">
-                <input type="submit" class="btn btn-primary float-right ml-auto pl-5 pr-5" value="Simpan">
+                <input type="submit" class="btn btn-warning float-right ml-auto pl-5 pr-5" value="Simpan">
             </div>
         </form>
     </div>

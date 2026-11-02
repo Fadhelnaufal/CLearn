@@ -23,9 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://localhost:8080/classmate/';
-// $config['base_url'] = 'https://classmate.games/';
-// $config['base_url'] = 'http://192.168.0.118/classmate/';
+$config['base_url'] = 'http://localhost/clearn/';
 
 /*
 |--------------------------------------------------------------------------

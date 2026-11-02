@@ -27,7 +27,7 @@
     </div>
     <div class="row">
         <div class="col-md-8">
-            <div class="card-forum mt-3 p-0 bg-darkpurple">
+            <div class="card-forum mt-3 p-0 bg-white">
                 <form action="<?= base_url() ?>DiscussionGuru/adddatadiskusi" method="post" enctype="multipart/form-data">
                     <div class="form-group row">
                         <textarea name="content" id="add_question" class=" form-control" required></textarea>
@@ -35,7 +35,7 @@
                     <div class="form-group row btn-diskusi px-3" style="display:none">
                         <div class="w-50">
 
-                            <select name="kategori" class="form-control  border-0 bg-primary fw-bold " style="width:auto" required>
+                            <select name="kategori" class="form-control border-0 bg-warning fw-bold text-center" style="width:auto" required>
                                 <option value="">Pilih Kategori</option>
                                 <option value="Pengumuman">Pengumuman</option>
                                 <option value="Tugas">Tugas</option>
@@ -45,22 +45,22 @@
 
                         <div class="w-50">
                             <input type="hidden" name="courseid" value="<?= $course_id ?>">
-                            <input type="submit" class="btn bg-warning float-end" value="Kirim">
+                            <input type="submit" class="btn bg-lightyellow float-end text-white" value="Kirim">
                         </div>
                     </div>
                 </form>
             </div>
             <?php if (!empty($diskusi)) : ?>
                 <?php foreach ($diskusi as $row) : ?>
-                    <a href="<?= base_url() ?>DiscussionGuru/detail_discussion/<?= $row->ForumQID ?>/<?= $course_id ?>" class="text-secondary">
-                        <div class="card-forum mt-3 ">
+                    <a href="<?= base_url() ?>DiscussionGuru/detail_discussion/<?= $row->ForumQID ?>/<?= $course_id ?>" class="text-dark">
+                        <div class="card card-forum mt-3 ">
                             <div class="row">
                                 <div class="w-10 ava-space pe-0">
                                     <img src="<?= base_url() ?>media/avatar/<?= $row->UserAvatar ?>" alt="image" class="w-100 my-auto">
                                 </div>
                                 <div class="w-90 name-space ">
                                  
-                                    <div class="fw-bolder"><?= $row->UserName ?>  
+                                    <div class="fw-bolder text-dark"><?= $row->UserName ?>  
                                     <?php if($row->UserRole=="guru"):?>  
                                     <span class="badge bg-danger p-1">Guru</span> 
                                     <?php endif;?>
@@ -75,7 +75,7 @@
                             <div class="mt-3 fs-5 fw-bold">
                                 <?= $row->ForumQTitle ?>
                             </div>
-                            <div class="text-white isi-diskusi">
+                            <div class="text-dark isi-diskusi">
                                 <?= $row->ForumQContent ?>
                             </div>
                             <!-- <hr> -->
@@ -94,16 +94,15 @@
                 <?php endforeach; ?>
         </div>
         <div class="col-md-4">
-
-            <div class="card-forum mt-3">
+            <div class="card card-body bg-lightyellow mt-3">
                 <div class="row">
-                    <span class="fw-bold text-white small mt-2 w-60"> <i class="fas fa-dot-circle text-warning me-1"></i>SISWA TERAKTIF</span>
-                    <span class="fw-bold text-white small mt-2 w-40 text-end"> <i class="fas fa-star text-warning"></i>
+                    <span class="fw-bold text-dark small mt-2 w-60"> <i class="fas fa-dot-circle text-warning me-1"></i>SISWA TERAKTIF</span>
+                    <span class="fw-bold text-dark small mt-2 w-40 text-end"> <i class="fas fa-star text-warning"></i>
                         SKOR</sp>
                 </div>
                 <div class="mt-4 ">
                     <?php foreach ($leaderboard as $lb) : ?>
-                        <div class="row bg-darkgreen py-3 border-end border-success border-3">
+                        <div class="row bg-lightyellow py-3 border-end border-success border-3">
                             <div class="lb-forum w-20 my-auto">
                                 <img src="<?= base_url() ?>media/avatar/<?= $lb->UserAvatar ?>" alt="image" class="w-35px my-auto">
                             </div>
@@ -116,7 +115,6 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
-
             </div>
         </div>
     </div>

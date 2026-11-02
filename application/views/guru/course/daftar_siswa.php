@@ -1,13 +1,13 @@
 <div class="row mx-0 mt-4">
-    <p class="fw-bold text-white small"> <i class="fas fa-dot-circle text-warning me-1"></i>DAFTAR NAMA SISWA</p>
-    <div class="card mt-3 bg-darkblue">
+    <p class="fw-bold text-dark small"> <i class="fas fa-dot-circle text-warning me-1"></i>DAFTAR NAMA SISWA</p>
+    <div class="card mt-3">
         <div class="card-body overflow-auto">
             <table class="table table-hover mt-3" id="daftar_siswa">
                 <thead>
                     <th>No</th>
-                    <th>#</th>
+                    <th>Avatar</th>
                     <th>Nama Lengkap</th>
-                    <th>Skor</th>
+                    <th>Skor EXP</th>
                     <th>Level</th>
                     <th>Email</th>
                     <th>Nomor Telepon</th>

@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group row px-3">
                     <div class="w-50">
-                        <select name="kategori" class="form-control  border-0 bg-primary fw-bold " style="width:auto"
+                        <select name="kategori" class="form-control  border-0 bg-warning text-center fw-bold " style="width:auto"
                             required>
                             <option value="">Pilih Kategori</option>
                             <option value="Pengumuman" <?php if($thread->category=="Pengumuman"){echo "selected";}?>>
@@ -45,7 +45,7 @@
 
                     <div class="w-50">
                         <input type="hidden" name="courseid" value="">
-                        <input type="submit" class="btn bg-warning float-end" value="Kirim">
+                        <input type="submit" class="btn bg-lightgreen text-white float-end" value="Kirim">
                     </div>
 
                 </div>

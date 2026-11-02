@@ -1,0 +1,23 @@
+{
+  "name": "coopas",
+  "version": "1.0.0",
+  "description": "What is CodeIgniter ###################",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FayiHanifMuhyiddin/classmate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FayiHanifMuhyiddin/classmate/issues"
+  },
+  "homepage": "https://github.com/FayiHanifMuhyiddin/classmate#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.1"
+  }
+}

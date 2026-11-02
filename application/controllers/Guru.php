@@ -357,6 +357,42 @@ class Guru extends CI_Controller
         $this->load->view('guru/course/aktivitas');
         $this->load->view('guru/template/footer');
     }
+
+    public function addSertifikat($CourseID){
+        $config['upload_path']          = './assets/sertifikat';
+        $config['allowed_types']        = 'jpg|png|jpeg';
+        ;
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('Sertifikat')) {
+            $data = array(
+                'TeacherID'  => $this->session->userdata('id_user'),
+            );
+            $this->Course_model->updateKelas($CourseID, $data);
+        } else {
+            $data = array(
+                'TeacherID'  => $this->session->userdata('id_user'),
+                'Sertifikat' => $this->upload->data('file_name'),
+            );
+            $old_sertif = $this->Course_model->getOldSertif($CourseID);
+            $this->Course_model->updateKelas($CourseID, $data);
+            unlink('./assets/sertifikat/' . $old_sertif); // This is an absolute path to the file
+        }
+        redirect('guru/sertifikat/' . $CourseID, 'refresh');
+    }
+
+    public function sertifikat($CourseID){
+        $data = array(
+            'title'     => $this->Course_model->courseByGuru($CourseID)->CourseName . " - " . $this->Course_model->courseByGuru($CourseID)->ClassName,
+            'menu'      => 'Kelas',
+            'course_menu' => "Sertifikat",
+            'course'    => $this->Course_model->courseByGuru($CourseID),
+        );
+        $this->load->view('guru/template/header', $data);
+        $this->load->view('guru/template/course_menu');
+        $this->load->view('guru/course/sertifikat');
+        $this->load->view('guru/template/footer');
+    }
     public function rekap($CourseID)
     {
         $data = array(
@@ -694,7 +730,7 @@ class Guru extends CI_Controller
         redirect('guru/course/'.$CourseID,'refresh');
         
     }
-     public function liveCode()
+    public function liveCode()
     {
         $data = array(
             'title' => "Live Code",
@@ -702,6 +738,16 @@ class Guru extends CI_Controller
         );
         $this->load->view('guru/template/header', $data);
         $this->load->view('siswa/livecode');
+        $this->load->view('guru/template/footer');
+    }
+    public function gameedu()
+    {
+        $data = array(
+            'title' => "Game Edu",
+            'menu'  => 'Game Edu',
+        );
+        $this->load->view('guru/template/header', $data);
+        $this->load->view('siswa/gameedu');
         $this->load->view('guru/template/footer');
     }
 }

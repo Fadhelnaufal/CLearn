@@ -30,6 +30,7 @@ class Siswa extends CI_Controller
             'total_mission' => $this->Course_model->countAllLesson() + $this->Course_model->countAllQuiz(),
             'completed_mission' => $this->Course_model->countCompletedLesson() + $this->Course_model->countCompletedQuiz()
         );
+        // $data['sum'] = $this->m_query->getAllLeaderboard();
         $this->load->view('siswa/template/header', $data);
         $this->load->view('siswa/dashboard');
         $this->load->view('siswa/template/footer');
@@ -40,8 +41,9 @@ class Siswa extends CI_Controller
         $data = array(
             'title'     => "Kelas",
             'menu'      => "Kelas",
-             'user'        => $this->Course_model->getUser(),
+            'user'      => $this->Course_model->getUser(),
             'courseList' => $this->Course_model->getCourseSiswa()
+            // 'allleaderboard'    => $this->Course_model->getAllLeaderboard()
         );
         $this->load->view('siswa/template/header', $data);
         $this->load->view('siswa/course/kelas');
@@ -112,6 +114,23 @@ class Siswa extends CI_Controller
         $this->load->view('siswa/course/teman');
         $this->load->view('siswa/template/footer');
     }
+    public function sertifikat($CourseID)
+    {
+        $data = array(
+            'title'     => $this->Course_model->course($CourseID)->CourseName . ' - ' . $this->Course_model->course($CourseID)->ClassName,
+            'menu'      => 'Kelas',
+            'user'        => $this->Course_model->getUser(),
+            'course_menu'      => 'Sertifikat',
+            'course'    => $this->Course_model->course($CourseID),
+            'sertifikat'     => $this->Course_model->sertifikat($CourseID),
+            'total_mission' => $this->Course_model->countAllLesson() + $this->Course_model->countAllQuiz(),
+            'completed_mission' => $this->Course_model->countCompletedLesson() + $this->Course_model->countCompletedQuiz()
+        );
+        $this->load->view('siswa/template/header', $data);
+        $this->load->view('siswa/course/course_menu');
+        $this->load->view('siswa/course/sertifikat');
+        $this->load->view('siswa/template/footer');
+    }
     public function informasi($CourseID)
     {
         $data = array(
@@ -132,7 +151,7 @@ class Siswa extends CI_Controller
         $data = array(
             'title'     => $this->Course_model->course($CourseID)->CourseName . ' - ' . $this->Course_model->course($CourseID)->ClassName,
             'menu'      => 'Kelas',
-             'user'        => $this->Course_model->getUser(),
+            'user'      => $this->Course_model->getUser(),
             'course_menu'      => 'Leaderboard',
             'course'    => $this->Course_model->courseInfo($CourseID),
             'leaderboard'    => $this->Course_model->getLeaderboard($CourseID),
@@ -154,6 +173,16 @@ class Siswa extends CI_Controller
         $this->load->view('siswa/template/header', $data);
         $this->load->view('siswa/livecode');
         $this->load->view('siswa/template/footer');
+    }
+    public function gameedu()
+    {
+        $data = array(
+            'title' => "Game Edu",
+            'menu'  => 'Game Edu',
+        );
+        $this->load->view('guru/template/header', $data);
+        $this->load->view('siswa/gameedu');
+        $this->load->view('guru/template/footer');
     }
 }
 

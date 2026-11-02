@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Classmate - Daftar</title>
+    <title>CLearn Register</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -22,43 +22,24 @@
     <link rel="stylesheet" href="<?=base_url()?>assets/landing/css/flaticon.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/landing/css/icomoon.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/landing/css/style.css">
-    <link rel="shortcut icon" href="<?=base_url()?>assets/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="<?=base_url()?>assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="<?=base_url()?>assets/clearn/icon_clearn.png" type="image/x-icon">
+    <link rel="icon" href="<?=base_url()?>assets/clearn/icon_clearn.png" type="image/x-icon">
 </head>
 
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="<?=base_url()?>">
-                <img src="<?=base_url()?>assets/img/logo.png" alt="" class="logo" srcset="">
-            </a>
-            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
-                data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> Menu
-            </button>
-
-            <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav nav ml-auto">
-                    <li class="nav-item"><a href="<?=base_url()?>#home-section" class="nav-link"><span>Beranda</span></a></li>
-                    <li class="nav-item"><a href="<?=base_url()?>#about-section" class="nav-link"><span>Tentang</span></a></li>
-                    <li class="nav-item"><a href="<?=base_url()?>#feature-section" class="nav-link"><span>Fitur</span></a></li>
-                    <!-- <li class="nav-item"><a href="#dev-section" class="nav-link"><span>Tim Pengembang</span></a></li> -->
-                </ul>
-            </div>
-
-
-        </div>
-    </nav>
-    <section id="home-section" class="login">
-        <div class="row container">
-                <!-- <span class="subheading">Classmate</span> -->
-                <div class="col-md-5">
-                    <h4 class=" mt-3  font-weight-bold text-light "><span>Daftar</span> </h4>
-                <h6 class="mb-4 small ">Sudah memiliki akun? <a href="<?=base_url()?>auth/login"
-                        class="text-purple font-weight-bold">Login</a></h6>
-
+<body>
+    <section id="daftar-section" class="login">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6" style="background-color: #E8DB84">
+                <img src="<?=base_url()?>assets/clearn/auth_obj.svg" class="w-60 mt-5" alt="" style="position:relative">
+                </div>
+            <div class="col-md-6 px-lg-8 px-sm-2" style="background-color: #f8f9fa">
+                <a class="float-right" href="<?=base_url()?>">
+                    <img src="<?=base_url()?>assets/clearn/logo_clearn.svg" alt="" class="logo" srcset="">
+                </a>
+                <h3 class="mt-5  font-weight-bold text-dark text-center"><span>REGISTER</span> </h3>
+                <h5 class="mb-5 small text-center">We Suggest using the email address you use at work</h5>
+                
                 <div class="fw-bold text-danger small"><?php echo validation_errors(); ?></div>
                 <form role="form" method="POST" class="mb-5" action="<?= base_url('auth/daftar') ?>">
                     <div class="">
@@ -91,14 +72,14 @@
                         </div>
                         <label class="small  font-weight-bold">Daftar Sebagai</label>
                         <div class="mb-5 row">
-                            <div class="form-check mr-4">
+                            <div class="form-check btn btn-info py-2 px-5 mr-3">
                                 <input class="form-check-input" type="radio" name="userRole" id="flexRadioDefault2"
                                     value="2" required>
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Siswa
                                 </label>
                             </div>
-                            <div class="form-check">
+                            <div class="form-check btn btn-info py-2 px-5 mr-3">
                                 <input class="form-check-input" type="radio" name="userRole" id="flexRadioDefault1"
                                     value="1" required>
                                 <label class="form-check-label" for="flexRadioDefault1">
@@ -108,19 +89,17 @@
 
                         </div>
                     </div>
-                    <div class=" w-100 mt-5">
-                        <input type="submit" class="btn btn-primary py-3 px-5 mr-3" value="Daftar Sekarang">
+                    <div class="align-content-center mt-5 d-md-block">
+                        <input type="submit" class="btn btn-info py-3 px-5 mr-3" value="Daftar Sekarang">
                     </div>
-
-
-
                 </form>
+                <h6 class="small text-secondary my-5 text-center">Sudah memiliki akun? <a href="<?=base_url()?>auth/login"
+                    class="text-info font-weight-bold">Login</a>
+                </h6>
                 </div>
-                <div class="col-md-7">
-                    <img src="<?=base_url()?>assets/img/vector/Mobile login-bro.svg" class="w-100" alt="">
+                
 
-                </div>
-
+        </div>
         </div>
     </section>
 

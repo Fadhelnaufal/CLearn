@@ -8,31 +8,31 @@
         </nav>
 
         <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
+            <div class="card bg-lightgreen ">
+                <div class="card-body rounded">
                     <form action="<?=base_url()?>guru/addkelas" method="post" enctype='multipart/form-data'>
                         <div class="mb-3">
                             <label for="CourseName" class="form-label">Nama Mata Pelajaran</label>
-                            <input type="text" name="CourseName" class="form-control  text-light"
+                            <input type="text" name="CourseName" class="form-control  text-dark"
                                 placeholder="Masukkan Nama Mata Pelajaran" required>
                         </div>
                         <div class="mb-3">
                             <label for="SchoolName" class="form-label">Nama Sekolah</label>
-                            <input type="text" name="SchoolName" class="form-control  text-light"
+                            <input type="text" name="SchoolName" class="form-control  text-dark"
                                 placeholder="Masukkan Nama Sekolah" required>
                         </div>
                         <div class="mb-3">
                             <label for="ClassName" class="form-label">Kelas</label>
-                            <input type="text" name="ClassName" class="form-control  text-light"
-                                placeholder="Masukkan Nama Kelas (contoh: XII RPL D)" required>
+                            <input type="text" name="ClassName" class="form-control  text-dark"
+                                placeholder="Masukkan Nama Kelas (contoh: XI RPL A)" required>
                         </div>
                         <div class="mb-3">
                             <label for="CourseLogo" class="form-label">Logo Kelas (.jpg/.png)</label>
-                            <input type="file" name="CourseLogo" class="form-control  text-light"
+                            <input type="file" name="CourseLogo" class="form-control  text-dark"
                                 accept="image/*" required>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Buat Kelas</button>
+                        <button type="submit" class="btn btn-white text-dark float-right">Buat Kelas</button>
                     </form>
                 </div>
             </div>

@@ -54,4 +54,10 @@ class M_Auth extends CI_Model
         $this->db->update('users', $data);    
     }
 
+    function updatePasswordhash($data,$email)
+	{
+		$this->db->where('UserEmail',$email);
+		$this->db->update('users',$data);
+	}
+
 }

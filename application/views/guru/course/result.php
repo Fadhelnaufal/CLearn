@@ -34,16 +34,16 @@
             </div>
         </div>
     </div>
-    <p class="fw-bold text-white small mt-4 text-uppercase"> <i class="fas fa-dot-circle text-warning me-1"></i>SISWA YANG TELAH
+    <p class="fw-bold text-dark small mt-4 text-uppercase"> <i class="fas fa-dot-circle text-warning me-1"></i>SISWA YANG TELAH
         MEMBACA <?=$lesson['LessonTitle']?></p>
     <div class="row mx-0 ">
         <?php if(!empty($siswa)):?>
-        <div class="card mt-3 bg-darkblue ">
+        <div class="card mt-3 ">
             <div class="card-body overflow-auto">
                 <table class="table table-hover mt-3" id="daftar_siswa">
                     <thead>
                         <th>No</th>
-                        <th>#</th>
+                        <th>Avatar</th>
                         <th>Nama</th>
                         <th>Selesai</th>
                         <th>Reward</th>
@@ -65,7 +65,7 @@
             </div>
         </div>
         <?php else:?>
-        <div class="card mt-3 bg-darkblue card-body">
+        <div class="card mt-3 bg-lightgreen card-body">
             Belum ada yang membaca 
         </div>
         <?php endif;?>

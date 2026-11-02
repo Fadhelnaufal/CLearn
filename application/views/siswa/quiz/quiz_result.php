@@ -29,14 +29,14 @@
         </div>
     </div>
 
-    <div class="card card-body bg-darkgreen mt-4">
+    <div class="card card-body bg-lightyellow mt-4">
         <div class="row">
             <div class="col-md-5 mb-3">
-                <img src="<?=base_url()?>assets/img/vector/Grades-cuate.svg" alt="" class="w-100" srcset="">
+                <img src="<?=base_url()?>assets/clearn/landing_obj2.svg" alt="" class="w-100" srcset="">
             </div>
             <div class="col-md-7 my-auto ">
-                <h3 class="text-white mb-5"><?=$quiz->QuizTitle?></h3>
-                <p> <i class="fas fa-award text-warning fs-5"></i> <span class="text-white fw-bold">Kamu mendapat
+                <h3 class="text-dark mb-5"><?=$quiz->QuizTitle?></h3>
+                <p> <i class="fas fa-award text-warning fs-5"></i> <span class="text-dark fw-bold">Kamu mendapat
                         reward
                         <?=$user_quiz->addXP?> XP</span></p>
                           <?php if(($quiz->QuizID != 7) &&( $quiz->QuizID != 12) &&( $quiz->QuizID != 11)) :?>
@@ -51,11 +51,11 @@
     
        <?php if(($quiz->QuizID != 7) &&( $quiz->QuizID != 12) &&( $quiz->QuizID != 11)) :?>
     <div class="col-md-12 mt-4">
-        <p class="h4 text-white mb-3 ms-3"><i class="fas fa-bookmark text-warning"></i> HASIL QUIZ</p>
+        <p class="h4 text-dark mb-3 ms-3"><i class="fas fa-bookmark text-warning"></i> HASIL QUIZ</p>
         <?php $x=1; foreach($feedback as $row):?>
         <?php $t=$row->TrueOption; $a=$row->answer;?>
-        <div class="card card-body bg-darkblue mb-3">
-            <p class="text-white h6"><?=$x?>. <?=$row->Question?></p>
+        <div class="card card-body bg-light mb-3">
+            <p class="text-dark h6"><?=$x?>. <?=$row->Question?></p>
             <?php if ($row->question_img!=null):?>
             <a href="<?=base_url()?>media/soal/<?=$row->question_img?>" target="_blank">
                 <img src="<?=base_url()?>media/soal/<?=$row->question_img?>" style="width:50%" class="rounded ms-3"
@@ -65,7 +65,7 @@
             <?php endif;?>
             <div class="ms-3 mt-3">
                 <p
-                    class=" <?php if($t==$a && $a=='A'){echo 'text-success border-success';}elseif($t!==$a && $a=='A'){echo 'text-white';}elseif($t=='A'){echo 'text-success border-success';}else{echo 'text-white';}?>">
+                    class=" <?php if($t==$a && $a=='A'){echo 'text-success border-success';}elseif($t!==$a && $a=='A'){echo 'text-danger';}elseif($t=='A'){echo 'text-success border-success';}else{echo 'text-dark';}?>">
                     A. <?=$row->OptionA?>
                     <?php if($t=='A'):?>
                     <i class="fas fa-check text-success"></i>
@@ -75,7 +75,7 @@
                     <?php endif;?>
                 </p>
                 <p
-                    class=" <?php if($t==$a && $a=='B'){echo 'text-success border-success';}elseif($t!==$a && $a=='B'){echo 'text-white';}elseif($t=='B'){echo 'text-success border-success';}else{echo 'text-white';}?>">
+                    class=" <?php if($t==$a && $a=='B'){echo 'text-success border-success';}elseif($t!==$a && $a=='B'){echo 'text-danger';}elseif($t=='B'){echo 'text-success border-success';}else{echo 'text-dark';}?>">
                     B. <?=$row->OptionB?>
                     <?php if($t=='B'):?>
                     <i class="fas fa-check text-success"></i>
@@ -85,7 +85,7 @@
                     <?php endif;?>
                 </p>
                 <p
-                    class=" <?php if($t==$a && $a=='C'){echo 'text-success border-success';}elseif($t!==$a && $a=='C'){echo 'text-white';}elseif($t=='C'){echo 'text-success border-success';}else{echo 'text-white';}?>">
+                    class=" <?php if($t==$a && $a=='C'){echo 'text-success border-success';}elseif($t!==$a && $a=='C'){echo 'text-danger';}elseif($t=='C'){echo 'text-success border-success';}else{echo 'text-dark';}?>">
                     C. <?=$row->OptionC?>
                     <?php if($t=='C'):?>
                     <i class="fas fa-check text-success"></i>
@@ -95,7 +95,7 @@
                     <?php endif;?>
                 </p>
                 <p
-                    class=" <?php if($t==$a && $a=='D'){echo 'text-success border-success';}elseif($t!==$a && $a=='D'){echo 'text-white';}elseif($t=='D'){echo 'text-success border-success';}else{echo 'text-white';}?>">
+                    class=" <?php if($t==$a && $a=='D'){echo 'text-success border-success';}elseif($t!==$a && $a=='D'){echo 'text-danger';}elseif($t=='D'){echo 'text-success border-success';}else{echo 'text-dark';}?>">
                     D. <?=$row->OptionD?>
                     <?php if($t=='D'):?>
                     <i class="fas fa-check text-success"></i>
@@ -105,7 +105,7 @@
                     <?php endif;?>
                 </p>
                 <p
-                    class=" <?php if($t==$a && $a=='E'){echo 'text-success border-success';}elseif($t!==$a && $a=='E'){echo 'text-white';}elseif($t=='E'){echo 'text-success border-success';}else{echo 'text-white';}?>">
+                    class=" <?php if($t==$a && $a=='E'){echo 'text-success border-success';}elseif($t!==$a && $a=='E'){echo 'text-danger';}elseif($t=='E'){echo 'text-success border-success';}else{echo 'text-dark';}?>">
                     E. <?=$row->OptionE?>
                     <?php if($t=='E'):?>
                     <i class="fas fa-check text-success"></i>

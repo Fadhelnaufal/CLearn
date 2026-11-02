@@ -1,4 +1,7 @@
-15 Agustus 2020
+14 Maret adalah awal AM
+Nyicil web terus gaes. Hari AHAD
+
+20 Maret 2022 
 GURU
 - Fitur login
 - Fitur register
@@ -8,14 +11,14 @@ SISWA
 - Fitur Livecode
 - Tampilan Dashboard Siswa
 
-16 Agustus 2020
+10 April 2022
 GURU
 - Membuat Dashboard guru
 - Guru dapat menambahkan kelas baru
 SISWA
 - Memperbaiki Tampilan Dashboard Siswa
 
-17 Agustus 2020
+15 Mei 2022
 SISWA
 - Siswa dapat mengambil kelas
 - Perbaikan bug (kelas yg sudah diambil masih muncul di cari kelas)
@@ -29,7 +32,7 @@ GURU
 - Menampilkan jumlah kelas yg dibuat guru di Dashboard Guru
 - Menampilkan jumlah siswa yang diajar di Dashboard Guru
 
-22 Agustus 2021
+12 Juni 2022
 GURU
 - Membuat sub menu kelas (Kelas, Rekap Nilai, Siswa, Pengaturan)
 - Menampilkan daftar nama dan identitas siswa
@@ -39,11 +42,11 @@ GURU
 - Menghapus kelas
 - Mengeluarkan siswa dari kelas
 
-23 Agustus 2021
+17 Juli 2022
 SISWA
 - Membuat sub menu kelas (Misi, aktivitas, teman, dan informasi kelas)
 
-25 Agustus 2021
+14 Agustus 2022
 SISWA
 - Mengubah Profil (Mengganti nama, email, dan no telp)
 - Mengubah password
@@ -55,8 +58,26 @@ GURU
 - Mengubah password
 - Mengganti avatar
 
-30 Agustus 2021
+11 September 2022
 SISWA
 - Menampilkan materi
 - Menampilkan level
 - Menampilkan karakter sesuai level
+
+17 Oktober 2022
+Dibuka lagi gaess.... wayahe mantun seko magang
+
+5 November 2022
+Revisi Landing page
+Ungu #c539ff hijau #20c997
+--bs-igreen: #96dc3a;
+--bs-iyellow: #fed153;
+--bs-iorange: #fe820a; 
+biru miki : #252c61;
+
+Desember belum fix
+warna index tabel siswa
+count course belum jalan
+gambar dashboard kalau mobile kekecilan
+leaderboard tambahkan dari total xp (buat menu baru di beranda)
+

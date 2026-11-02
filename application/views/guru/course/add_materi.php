@@ -30,7 +30,7 @@
             </div>
         </div>
     </div>
-    <p class="fw-bold text-white small mt-4 text-uppercase"> <i class="fas fa-dot-circle text-warning me-1"></i>Buat materi</p>
+    <p class="fw-bold text-dark small mt-4 text-uppercase"> <i class="fas fa-dot-circle text-warning me-1"></i>Buat materi</p>
 
     <div class="card mt-3">
        <div class="card-body">
@@ -38,22 +38,22 @@
             enctype="multipart/form-data">
 
             <div class="form-group ">
-                <label class=" text-white">Judul Materi</label>
+                <label class=" text-dark">Judul Materi</label>
                 <div class="col-sm-12">
-                    <input type="text" class="form-control " name="title" placeholder="Judul Materi"
+                    <input type="text" class="form-control text-dark" name="title" placeholder="Judul Materi"
                         required>
                 </div>
             </div>
             <div class="form-group row">
-                <label class=" text-white">Tambah Lampiran (opsional)</label>
+                <label class=" text-dark">Tambah Lampiran (opsional)</label>
                 <div class="col-md-4">
-                    <input type="file" name="file" class='form-control '>
+                    <input type="file" name="file" class='form-control text-dark'>
                 </div>
             </div>
 
             <div class="form-group row">
-              <label class=" text-white">Isi Materi</label>
-                <textarea name="content" id="add_materi" class="text-white form-control" cols="30" rows="30"
+              <label class=" text-dark">Isi Materi</label>
+                <textarea name="content" id="add_materi" class="form-control text-dark" cols="30" rows="30"
                     required></textarea>
             </div>
 

@@ -10,24 +10,24 @@
             </li>
         </ol>
     </nav>
-    <div class="card bg-darkpurple">
+    <div class="card bg-lightyellow">
         <div class="card-body">
             <div class="row" id="start" style="display:flex">
-                <div class="bg-warning text-white fw-bold  p-2 small" style="margin-top:-2rem"> <i
+                <div class="bg-white rounded text-dark fw-bold  p-2 small" style="margin-top:0rem"> <i
                         class="fas fa-star "></i> Reward hingga <?=$jmlsoal*50?> XP</div>
-                <div class="col-md-6 mb-3">
-                    <img src="<?=base_url()?>assets/img/vector/Online test-pana.svg" alt="" class="w-100" srcset="">
+                <div class="col-md-6">
+                    <img src="<?=base_url()?>assets/clearn/landing_obj2.svg" alt="" class="w-100" srcset="">
                 </div>
                 <div class="col-md-6 my-auto">
-                    <p class="h3 text-white text-uppercase"><?=$quiz->QuizTitle?></p>
-                    <p class="text-white h6">Jumlah Soal <?=$jmlsoal?></p>
-                    <a href="#" class="btn btn-primary btn-lg mt-3" onclick="hideshow('start','Q1')">Mulai Quiz</a>
+                    <p class="h3 text-dark text-uppercase"><?=$quiz->QuizTitle?></p>
+                    <p class="text-dark h6">Jumlah Soal <?=$jmlsoal?></p>
+                    <a href="#" class="btn btn-warning btn-lg mt-3" onclick="hideshow('start','Q1')">Mulai Quiz</a>
                 </div>
             </div>
             <form action="<?= base_url('quiz/QuizResult/'.$quiz->QuizID.'/'.$CourseID) ?>" method="post" id="quizForm">
                 <?php $x=1; foreach ($question as $row) : ?>
                 <div class="row " id="Q<?=$x?>" style="display:none">
-                    <div class="col-md-6 text-white text-center my-auto h5">
+                    <div class="col-md-6 text-dark text-center my-auto h5">
 
                         <p class="fw-bold"><?= $row->Question ?></p>
                         <?php if ($row->question_img!=null):?>

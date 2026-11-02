@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Classmate</title>
+    <title>CLearn</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -22,23 +22,22 @@
     <link rel="stylesheet" href="<?=base_url()?>assets/landing/css/flaticon.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/landing/css/icomoon.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/landing/css/style.css">
-    <link rel="shortcut icon" href="<?=base_url()?>assets/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="<?=base_url()?>assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="<?=base_url()?>assets/clearn/icon_clearn.png" type="image/x-icon">
+    <link rel="icon" href="<?=base_url()?>assets/clearn/icon_clearn.png" type="image/x-icon">
     
 
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-        <div class="container">
+    <!-- NAVIGASI -->
+    <nav class="navbar navbar-expand-lg navbar-light ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">    
+    <div class="container">
             <a class="navbar-brand" href="<?=base_url()?>">
-                <img src="<?=base_url()?>assets/img/logo.png" alt="" class="logo" srcset="">
+                <img src="<?=base_url()?>assets/clearn/logo_clearn.svg" alt="" class="logo" srcset="">
             </a>
             <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
                 data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> Menu
+                <span class="oi oi-menu"> .</span>
             </button>
 
             <div class="collapse navbar-collapse" id="ftco-nav">
@@ -46,233 +45,87 @@
                     <li class="nav-item"><a href="#home-section" class="nav-link"><span>Beranda</span></a></li>
                     <li class="nav-item"><a href="#about-section" class="nav-link"><span>Tentang</span></a></li>
                     <li class="nav-item"><a href="#feature-section" class="nav-link"><span>Fitur</span></a></li>
-                    <!-- <li class="nav-item"><a href="#dev-section" class="nav-link"><span>Tim Pengembang</span></a></li> -->
+                    <li class="nav-item"><a href="<?=base_url()?>auth/daftar/" class="btn btn-outline-primary"><span>Get Started</span></a></li>
                 </ul>
             </div>
         </div>
+        
     </nav>
+
+    <img class="bg-img bg-transparent  d-none d-sm-block" src="<?=base_url()?>assets/clearn/landing_bg.svg" class=""alt="gambar background" srcset="">
+
     <section id="home-section" class="hero">
         <div class="row container">
             <div class="col-md-6">
-                <!-- <span class="subheading">Classmate</span> -->
-                <h1 class=" mt-3 font-weight-bold text-purple"><span>Classmate</span> </h1>
-                <h2 class="mb-4 font-weight-bold">Cara Seru Belajar Bersama Teman Sekelas!</h2>
-                <p><a href="<?=base_url()?>auth/daftar/" class="btn btn-primary py-3 px-4 mr-3">Daftar</a> <a href="<?=base_url()?>auth/login/"
-                        class="btn btn-white btn-outline-white py-3 px-4">Masuk</a></p>
+                <h2 class="mb-4 font-weight-bold">Platform Pembelajaran Berbasis Gamifikasi dan Live Coding !</h2>
+                <h6 class="text-dark mb-5">CLearn merupakan website yang digunakan sebagai media pembelajaran pemrograman berbasis objek dengan mudah yang meliputi meliputi bahasa Java, PHP, Python, Laravel. Serta dilengkapi dengan latihan soal,live code,forum diskusi dan game edukasi.</h6>
+                <p><a href="<?=base_url()?>auth/login/" class="btn btn-dark py-3 px-4 mr-3">Get Started</a>
+                <a href="#" class="btn py-3 px-4">Learn More</a></p>
             </div>
             <div class="col-md-6">
-                <img src="<?=base_url()?>assets/img/vector/kids wearing masks at school-bro (2).svg" class="hero-img"
-                    alt="" srcset="">
+                <img src="<?=base_url()?>assets/clearn/landing_obj1.svg" class=""alt="gambar ilustrasi 1" srcset="">
             </div>
         </div>
     </section>
-
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+    
+    <section class="mt-5" id="about-section">
         <div class="container">
             <div class="row d-flex">
-                <div class="row justify-content-center pb-5">
-                    <div class="col-md-10 heading-section text-center ftco-animate">
-                        <h1 class="big big-2">Tentang</h1>
-                        <h2 class="mb-4">Tentang</h2>
-                        <p><b>Classmate</b> merupakan e-learning untuk mata pelajaran Basis Data dan Pemrograman
-                            Berbasis Objek (PBO) untuk siswa SMK</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="resume-wrap text-center ftco-animate">
-                            <img src="<?=base_url()?>assets/img/game.png" alt="">
-                            <h2 class="mt-4">Gamifikasi</h2>
-                            <p class="mt-4">Dapatkan pengalaman belajar kamu seperti layaknya bermain game</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="resume-wrap text-center ftco-animate">
-                            <img src="<?=base_url()?>assets/img/code.png" alt="">
-
-                            <h2 class="mt-4">Live Code</h2>
-                            <p class="mt-4">Jalankan kode kamu langsung di dalam e-learning</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="resume-wrap text-center ftco-animate">
-                            <img src="<?=base_url()?>assets/img/forum.png" alt="">
-
-                            <h2 class="mt-4">Diskusi</h2>
-                            <p class="mt-4">Lakukan Diskusi bersama guru dan teman sekelas</p>
-                        </div>
-                    </div>
+                <div class="row justify-content-center pb-2">
+                    <h2 class="mb-4 font-weight-bold my-5">Tentang</h2>
+                    <h6 class="text-dark">
+                        Clearn adalah platform pembelajaran pemrograman yang dirancang dengan pendekatan gamifikasi dan live coding. Melalui Clearn, pengguna dapat belajar pemrograman dengan cara yang menyenangkan dan interaktif. Pada Clearn, pengguna akan menemukan berbagai jenis materi pembelajaran pemrograman yang disajikan dengan cara yang interaktif dan menyenangkan. Materi-materi tersebut dapat berupa e-book , latihan pemrograman, dan juga quiz interaktif yang dirancang untuk meningkatkan pemahaman dan keterampilan pemrograman.
+                    </h6>
+                    <h6 class="text-dark mb-5">
+                        Cara belajar yang diusung oleh Clearn dilengkapi dengan elemen gamifikasi seperti penggunaan leaderboard untuk memberikan motivasi pada pengguna untuk terus belajar dan mengasah keterampilan pemrogramannya. Selain itu, Clearn juga menyediakan fitur live coding, dimana pengguna dapat belajar pemrograman secara langsung dengan mengikuti coding session yang dipandu oleh guru pendamping mata pelajaran.Dengan pendekatan yang interaktif dan menyenangkan, Clearn menjadikan belajar pemrograman lebih mudah dan mengasyikkan. Platform ini cocok untuk siswa yang ingin mempelajari pemrograman secara efektif dan efisien, serta untuk pengembang yang ingin meningkatkan keterampilan pemrograman mereka secara terus-menerus.
+                    </h6>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-    <section class="ftco-section" id="feature-section">
-        <div class="container">
-            <div class="row justify-content-center py-5 mt-3">
-                <div class="col-md-12 heading-section text-center ftco-animate">
-                    <h1 class="big big-2">Fitur</h1>
-                    <h2 class="mb-4">Fitur</h2>
-                </div>
+    
+    <section class="" id="feature-section">
+        <div class="row container align-items-center">
+            <div class="col-md-6">
+                <img src="<?=base_url()?>assets/clearn/landing_obj2.svg" class="" alt="Animasi Live Coding" srcset="">
             </div>
-            <div class="row">
-                <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1">
-                        <div class="desc">
-                            <h3 class="">Akses Materi 24/7</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1">
-                        <div class="desc">
-                            <h3 class="">Kerjakan Quiz</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1">
-                        <div class="desc">
-                            <h3 class="">Forum Diskusi</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1">
-                        <div class="desc">
-                            <h3 class="">Live Code Java & MySQL</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1">
-                        <div class="desc">
-                            <h3 class="">Naikkan Level</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1">
-                        <div class="desc">
-                            <h3 class="">Dapatkan Reward</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1">
-                        <div class="desc">
-                            <h3 class="">Leaderboard</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1">
-                        <div class="desc">
-                            <h3 class="">Avatar Unik</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1">
-                        <div class="desc">
-                            <h3 class="">Manajemen Kelas (Guru)</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1">
-                        <div class="desc">
-                            <h3 class="">Kelola Materi dan Quiz (Guru)</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1">
-                        <div class="desc">
-                            <h3 class="">Akses Rekap Nilai (Guru)</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1">
-                        <div class="desc">
-                            <h3 class="">Forum Diskusi (Guru)</h3>
-                        </div>
-                    </a>
-                </div>
+            <div class="col-md-6">
+                <h2 class="mb-4 font-weight-bold my-5">Live Coding !</h2>
+                <h6 class="text-dark mb-5">fitur yang memungkinkan siswa untuk mengikuti live coding session bersama pengajar atau instruktur. Dalam live coding session, pengajar akan menunjukkan bagaimana sebuah konsep pemrograman diterapkan dalam sebuah project atau aplikasi secara langsung, dan siswa dapat mengikuti proses coding tersebut dalam waktu nyata. </h6>
             </div>
         </div>
-    </section>
-    
-    <section class="ftco-section" id="feature-section">
-        <div class="container">
-                <div class="row justify-content-center ">
-                    <div class="col-md-12 heading-section text-center ftco-animate mb-10">
-                        <h1 class="big big-2">Pengembang</h1>
-                        <h2 class="mb-4">Pengembang</h2>
-                    </div>
-               <div>
-                <div class="row mt-10">
-                    <div class="col-md-6 ">
-                        <div class="resume-wrap text-center ftco-animate">
-                            <img src="<?=base_url()?>assets/img/hakkun.jpg" alt="">
-                            <!--<div class="col-6 square-1 mx-auto" style="background-color: rgba(255, 255, 255, 0.1)"></div>-->
-                            <h6 class="mt-4 text-white">Pembimbing 1</h6>
-                            <h6 style='font-size:20px' class='mt-2'>Dr. H. Hakkun Elmunsyah S.T M.T</h6>
-                            
-                        </div>
-                    </div>
-                   <div class="col-md-6">
-                        <div class="resume-wrap text-center ftco-animate">
-                             <!--<div class="col-6 square-2 mx-auto" style="background-color: rgba(255, 255, 255, 0.1)"></div>-->
-                             <img src="<?=base_url()?>assets/img/wahyu.jpg" alt="">
-                             <h6 class="mt-4 text-white">Pembimbing 2</h6>
-                            <h6 style='font-size:21px' class='mt-2'>Wahyu Nur Hidayat S.Pd M.Pd</h6>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6">
-                        <div class="resume-wrap text-center ftco-animate">
-                            <!--<div class="col-6 square-3 mx-auto" style="background-color: rgba(255, 255, 255, 0.1)"></div>-->
-                       <img src="<?=base_url()?>assets/img/luluu.jpg" alt="" style="width: 300px; height: 337px; object-fit: cover;">
-                           <h6 class="mt-4 text-white">Peneliti</h6>
-                            <h6 style='font-size:25.5px' class='mt-2'>Luluk Iwanatul Bariroh</h6>
-                        </div>
-                    </div>
-                      <div class="col-md-6">
-                        <div class="resume-wrap text-center ftco-animate">
-                          <img src="<?=base_url()?>assets/img/hafizh.jpg" alt="" style="width: 300px; height: 337px; object-fit: cover;">
-                            <h6 class="mt-4 text-white">Peneliti </h6>
-                            <h6 style='font-size:25.5px' class='mt-2'>Hafizh Arrozaq Baihaqi</h6>
-                        </div>
-                    </div>
-                </div>
+    </div>
+
+    <section class="" id="feature2-section">
+        <div class="row container align-items-center">
+            <div class="col-md-6">
+                <h2 class="mb-4 font-weight-bold my-5">Education Game</h2>
+                <h6 class="text-dark mb-5">fitur yang menggabungkan unsur-unsur game dengan pembelajaran. Dalam fitur ini, siswa dapat mempelajari konsep-konsep pemrograman melalui game-game edukasi yang dirancang khusus untuk meningkatkan kemampuan pemrograman siswa. </h6>
+            </div>
+            <div class="col-md-6">
+                <img src="<?=base_url()?>assets/clearn/landing_obj3.svg" class="" alt="Animasi Education Game" srcset="">
             </div>
         </div>
+
     </section>
-    
-    
-    
-    
+
     <footer class="ftco-footer ftco-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center small">
 
-                    <p>
+                    <p class="text-dark">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>
+                        Copyright &copy; <script>
                         document.write(new Date().getFullYear());
-                        </script> All rights reserved | Classmate Team
+                        </script> All rights reserved | Make with <span>❤️</span> by CLearn Team
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>
             </div>
         </div>
     </footer>
-
 
 
     <!-- loader -->

@@ -1,25 +1,25 @@
-
-var total_xp_course = document.getElementById("total_xp_course").value;
-var total_skor_course = document.getElementById("total_skor_course").value;
-var level_course = document.getElementById("level_course").value;
-anime({
-    targets: ".anime-xp-course input",
-    value: [0, total_xp_course],
-    round: 1,
-    easing: "easeInOutExpo",
-});
-anime({
-    targets: ".anime-skor-course input",
-    value: [0, total_skor_course],
-    round: 1,
-    easing: "easeInOutExpo",
-});
-anime({
-    targets: ".anime-level-course input",
-    value: [0, level_course],
-    round: 1,
-    easing: "easeInOutExpo",
-});
+// //nilai
+// var total_xp_course = document.getElementById("total_xp_course").value;
+// var total_skor_course = document.getElementById("total_skor_course").value;
+// var level_course = document.getElementById("level_course").value;
+// anime({
+//     targets: ".anime-xp-course input",
+//     value: [0, total_xp_course],
+//     round: 1,
+//     easing: "easeInOutExpo",
+// });
+// anime({
+//     targets: ".anime-skor-course input",
+//     value: [0, total_skor_course],
+//     round: 1,
+//     easing: "easeInOutExpo",
+// });
+// anime({
+//     targets: ".anime-level-course input",
+//     value: [0, level_course],
+//     round: 1,
+//     easing: "easeInOutExpo",
+// });
 
 //chart js
 var total_mission = document.getElementById("total_mission").value;
@@ -29,8 +29,8 @@ var data = {
     labels: ["Tantangan selesai", "Tantangan belum selesai"],
     datasets: [{
         data: [completed_mission, ongoing_mission],
-        backgroundColor: ["#7200ff", "#191b2a"],
-        hoverBackgroundColor: ["#7200ff", "#191b2a"],
+        backgroundColor: ["#fec600", "#E8DB84"],
+        hoverBackgroundColor: ["#fec600", "#E8DB84"],
     }, ],
 };
 
@@ -56,7 +56,7 @@ Chart.pluginService.register({
         var fontSize = (height / 114).toFixed(2);
         ctx.font = fontSize + "em sans-serif";
         ctx.textBaseline = "middle";
-        ctx.fillStyle = "#fff";
+        ctx.fillStyle = "#9351F0";
 
         var text = completed_mission + "/" + total_mission,
             textX = Math.round((width - ctx.measureText(text).width) / 2),

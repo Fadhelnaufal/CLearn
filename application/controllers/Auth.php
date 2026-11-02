@@ -7,6 +7,7 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         $this->load->model('M_Auth');
+        // $this->load->database();
     }
     public function index()
     {
@@ -33,7 +34,7 @@ class Auth extends CI_Controller
                     'id_user'  => $data->UserID,
                     'nama'     => $data->UserName,
                     'role'     => $data->UserRole,
-                    'ava'     => $data->UserAvatar,
+                    'ava'      => $data->UserAvatar,
                 );
             $this->session->set_userdata($userdata);
             if ($data->UserRole == "siswa") {
@@ -125,4 +126,111 @@ class Auth extends CI_Controller
 
         redirect('auth/login', 'refresh');
     }
+    public function lupapassword()
+    {
+        $this->load->model('M_Auth');
+		if($_SERVER['REQUEST_METHOD']=='POST')
+		{
+			$this->form_validation->set_rules('email','Email','required');
+			if($this->form_validation->run()==TRUE)
+			{
+				$email  = $this->input->post('email');
+				$validateEmail = $this->M_Auth->validateEmail($email);
+				if($validateEmail!=false)
+				{
+					$row = $validateEmail;
+					$user_id = $row->id;
+
+					$string = time().$user_id.$email;
+					$hash_string = hash('sha256',$string);
+					$currentDate = date('Y-m-d H:i');
+					$hash_expiry = date('Y-m-d H:i',strtotime($currentDate. ' + 1 days'));
+					$data = array(
+						'hash_key'=>$hash_string,
+						'hash_expiry'=>$hash_expiry,
+					);
+
+					
+					$resetLink = base_url().'reset/password?hash='.$hash_string;
+					$message = '<p>Your reset password Link is here:</p>'.$resetLink;
+					$subject = "Password Reset link";
+					$sentStatus = $this->sendEmail($email,$subject,$message);
+					if($sentStatus==true)
+					{
+						$this->M_Auth->updatePasswordhash($data,$email);
+						$this->session->set_flashdata('success','Reset password link successfully sent');
+						redirect(base_url('auth/login/'));
+					}
+					else
+					{
+						$this->session->set_flashdata('error','Email sending error');
+						$this->load->view('auth/lupapassword');	
+					}
+
+				}	
+				else
+				{
+					$this->session->set_flashdata('error','invalid email id');
+					$this->load->view('auth/lupapassword');	
+				}
+
+			}
+			else
+			{
+				$this->load->view('auth/lupapassword');	
+			}
+		}
+		else
+		{
+			$this->load->view('auth/lupapassword');	
+		}
+    }
+
+    /*user this email sending code */
+	public function sendEmail($email,$subject,$message)
+    {
+
+    	/* use this on server */
+
+    	/* $config = Array(
+		      'mailtype' => 'html',
+		      'charset' => 'iso-8859-1',
+		      'wordwrap' => TRUE
+	    	);
+    	 */
+
+    	
+    	/*This email configuration for sending email by Google Email(Gmail Acccount) from localhost */
+	    $config = Array(
+	      'protocol' => 'smtp',
+	      'smtp_host' => 'ssl://smtp.googlemail.com',
+	     
+	      'smtp_port' => 465,
+	      'smtp_user' => 'your_email@gmail.com',  //gmail id
+	      'smtp_pass' => 'your_app_password',   //gmail password
+	      
+	      'mailtype' => 'html',
+	      'charset' => 'iso-8859-1',
+	      'wordwrap' => TRUE
+	    	);
+
+
+
+          $this->load->library('email', $config);
+          $this->email->set_newline("\r\n");
+          $this->email->from('noreply - Coopas Team');
+          $this->email->to($email);
+          $this->email->subject($subject);
+          $this->email->message($message);
+          
+          if($this->email->send())
+         {
+           return true;
+         }
+         else
+         {
+         	return false;
+         }
+    }
+
 }

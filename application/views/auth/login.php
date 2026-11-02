@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Classmate- Login</title>
+    <title>CLearn Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -22,70 +22,47 @@
     <link rel="stylesheet" href="<?=base_url()?>assets/landing/css/flaticon.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/landing/css/icomoon.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/landing/css/style.css">
-   <link rel="shortcut icon" href="<?=base_url()?>assets/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="<?=base_url()?>assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="<?=base_url()?>assets/clearn/icon_clearn.png" type="image/x-icon">
+    <link rel="icon" href="<?=base_url()?>assets/clearn/icon_clearn.png" type="image/x-icon">
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="<?=base_url()?>">
-                <img src="<?=base_url()?>assets/img/logo.png" alt="" class="logo" srcset="">
-            </a>
-            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
-                data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> Menu
-            </button>
-
-            <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav nav ml-auto">
-                    <li class="nav-item"><a href="<?=base_url()?>#home-section"
-                            class="nav-link"><span>Beranda</span></a></li>
-                    <li class="nav-item"><a href="<?=base_url()?>#about-section"
-                            class="nav-link"><span>Tentang</span></a></li>
-                    <li class="nav-item"><a href="<?=base_url()?>#feature-section"
-                            class="nav-link"><span>Fitur</span></a></li>
-                    <!-- <li class="nav-item"><a href="#dev-section" class="nav-link"><span>Tim Pengembang</span></a></li> -->
-                </ul>
-            </div>
-
-
-        </div>
-    </nav>
-    <section id="home-section" class="login">
-        <div class="row container">
-            <!-- <span class="subheading">Classmate</span> -->
-             <div class="col-md-7">
-                <img src="<?=base_url()?>assets/img/vector/Mobile login-cuate.svg" class="w-80" alt="" style="position:relative">
+    
+    <section id="login-section" class="login">
+        <div class="container-fluid">
+            <div class="row">
+             <div class="col-md-6" style="background-color: #E8DB84">
+                <img src="<?=base_url()?>assets/clearn/auth_obj.svg" class="w-60 mt-5" alt="" style="position:relative">
 
             </div>
-            <div class="col-md-5 pb-5">
-                <h4 class=" mt-3  font-weight-bold text-light "><span>Login</span> </h4>
-                <h6 class="mb-4 small text-secondary ">Belum memiliki akun? <a href="<?=base_url()?>auth/daftar"
-                        class="text-purple font-weight-bold">Daftar</a></h6>
-
-                <div class="fw-bold text-danger small"><?php echo validation_errors(); ?></div>
-
-                <form role="form" method="POST" action="<?= base_url('auth/login/') ?>">
-                    <label class="text-white">Email</label>
+            <div class="col-md-6 px-lg-8 px-sm-2" style="background-color: #f8f9fa">
+                <a class="float-right" href="<?=base_url()?>">
+                    <img src="<?=base_url()?>assets/clearn/logo_clearn.svg" alt="" class="logo" srcset="">
+                </a>
+                <h3 class="mt-5  font-weight-bold text-dark text-center"><span>LOGIN</span> </h3>
+                <h5 class="mb-5 small text-center">We Suggest using the email address you use at work</h5>
+                
+                <form  role="form" method="POST" action="<?= base_url('auth/login/') ?>">
+                    <label class="text-dark">Email addres</label>
                     <div class=" mb-3">
                         <input type="email" name="email" class="form-control" placeholder="Masukkan Email" required>
                     </div>
-                    <label class="text-white">Password</label>
+                    <label class="text-dark">Password</label>
                     <div class="mb-2">
                         <input type="password" name="password" class="form-control" placeholder="Masukkan Password"
                             aria-label="Password" aria-describedby="password-addon" required>
                     </div>
 
-                    <div class="text-left">
-                        <input type="submit" class="btn btn-primary py-3 px-5 mr-3 mt-3 mb-5" value="Login">
+                    <div class="btn-block d-grip gap-2">
+                        <input type="submit" class="btn btn-info py-3 mt-3 mb-5" value="Login">
                     </div>
                 </form>
+                <h6 class="small text-secondary mt-5">Belum memiliki akun? <a href="<?=base_url()?>auth/daftar"
+                    class="text-info font-weight-bold">Daftar</a>
+                </h6>
             </div>
            
-
+            </div>
         </div>
     </section>
 

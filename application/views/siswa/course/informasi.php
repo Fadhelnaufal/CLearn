@@ -1,28 +1,28 @@
 <div class="row mt-4 mx-0">
-    <p class="text-white fw-bold">Informasi Kelas</p>
-    <div class="card bg-darkblue">
+    <p class="text-dark fw-bold">Informasi Kelas</p>
+    <div class="card bg-lightyellow">
         <div class="card-body row">
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-4 mt-3">
-                        <img src="<?=base_url()?>media/logo/<?=$course->CourseLogo?>" alt="" width="100px">
+            <div class="col-md-6 mx-md-5">
+                
+                    <div class="mt-3">
+                        <img src="<?=base_url()?>assets/clearn/logo_clearn.svg" class="w-40" alt="icon clearn">
                     </div>
-                    <div class="col-md-8 mt-3">
-                        <table class="table">
+                    <div class="mt-3">
+                        <table class="table text-white fw-bold">
                             <tr>
                                 <td>Mata Pelajaran</td>
-                                <td> <?=$course->CourseName?></td>
+                                <td class="text-wrap"><?=$course->CourseName?></td>
                             </tr>
                             <tr>
                                 <td>Kelas</td>
-                                <td> <?=$course->ClassName?></td>
+                                <td class="text-wrap"><?=$course->ClassName?></td>
                             </tr>
                             <tr>
                                 <td>Sekolah</td>
-                                <td><?=$course->SchoolName?></td>
+                                <td class="text-wrap"><?=$course->SchoolName?></td>
                             </tr>
                             <tr>
-                                <td>Guru</td>
+                                <td>Guru Pengampu</td>
                                 <td class="text-wrap"><?=$course->UserName?></td>
                             </tr>
                         </table>
@@ -56,10 +56,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                
             </div>
-            <div class="col-md-6  d-none d-sm-block">
-                <img src="<?=base_url()?>assets/img/vector/Learning-bro (1).svg" class="vector" alt="" srcset="">
+            <div class="col-md-4 mx-md-5 align-content-end">
+                <img src="<?=base_url()?>assets/clearn/info_obj.svg" class="w-80 " alt="gambar course">
             </div>
         </div>
     </div>

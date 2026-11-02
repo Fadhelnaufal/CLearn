@@ -18,10 +18,10 @@
             </ol>
         </nav>
     </div>
-    <div class="row ms-2">
-        <div class="card-forum  p-0">
+    <div class="row">
+    <div class="col-md-8">
+        <div class="card-forum p-0">
             <form action="<?= base_url() ?>DiscussionGuru/editdiskusi__/<?= $thread->ForumQID ?>/<?= $thread->CourseID ?>" method="post" enctype="multipart/form-data">
-
                 <div class="form-group">
                     <textarea name="content" id="add_question" class=" form-control" required>
                      <?= $thread->ForumQContent ?>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-group row px-3">
                     <div class="w-50">
-                        <select name="kategori" class="form-control  border-0 bg-primary fw-bold " style="width:auto" required>
+                        <select name="kategori" class="form-control border-0 bg-warning fw-bold " style="width:auto" required>
                             <option value="">Pilih Kategori</option>
                             <option value="Pengumuman" <?php if ($thread->category == "Pengumuman") {
                                                             echo "selected";
@@ -48,11 +48,14 @@
 
                     <div class="w-50">
                         <input type="hidden" name="courseid" value="">
-                        <input type="submit" class="btn bg-warning float-end" value="Kirim">
+                        <input type="submit" class="btn bg-lightgreen float-end text-dark" value="Kirim">
                     </div>
-
                 </div>
             </form>
         </div>
+    </div>
+    <div class="col-md-4 d-none d-sm-block">
+        
+    </div>
     </div>
 </div>

@@ -33,22 +33,22 @@
             </div>
         </div>
     </div>
-    <p class="fw-bold text-white small mt-4 text-uppercase"> <i class="fas fa-dot-circle text-warning me-1"></i>
+    <p class="fw-bold text-dark small mt-4 text-uppercase"> <i class="fas fa-dot-circle text-warning me-1"></i>
         quiz <?=$quiz->QuizTitle?></p>
-    <div class="card card-body d-block bg-darkpurple mt-3">
-        <h5 class="text-white">Quiz: <?=$quiz->QuizTitle?></h5>
+    <div class="card card-body d-block bg-lightyellow mt-3">
+        <h5 class="text-purple">Quiz: <?=$quiz->QuizTitle?></h5>
         <a data-bs-toggle="modal" data-bs-target="#addMateri" class="btn btn-warning"
             href="<?= base_url('guru/create_question/' . $courseID . '/' . $id) ?>"><i class="fas fa-plus"></i> Tambah
             Soal</a>
-        <a href="" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#editQuiz">Edit Quiz</a>
+        <a href="" class="btn btn-white " data-bs-toggle="modal" data-bs-target="#editQuiz">Edit Quiz</a>
         <div class="modal" id="editQuiz" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <label for="">Judul Quiz</label>
+                        <label for="" class="text-dark">Judul Quiz</label>
                         <form action="<?=base_url()?>guru/editquiz/<?=$quiz->QuizID?>/<?= $course->CourseID ?>" method="post">
-                            <input required type="text" value="<?=$quiz->QuizTitle?>" name="QuizTitle" class="form-control mb-3">
-                            <input type="submit"  class="btn btn-primary" value="Simpan">
+                            <input required type="text" class="form-control mb-3 text-dark" value="<?=$quiz->QuizTitle?>" name="QuizTitle" >
+                            <input type="submit"  class="btn btn-primary text-white" value="Simpan">
                         <a href="<?=base_url()?>guru/deleteQuiz/<?=$quiz->QuizID?>/<?= $course->CourseID ?>" class="btn btn-danger float-end">Hapus Quiz</a>
 
                         </form>
@@ -67,16 +67,17 @@
 
             <div class="card mb-2">
                 <div class="accordion text-dark " id="accordionFlushExample">
-                    <div class="accordion-item text-dark">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                            <button class="accordion-button collapsed text-white course-link" type="button"
+                    <div class="accordion-item">
+                        <h2 class="accordio
+                        n-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed text-dark " type="button"
                                 data-bs-toggle="collapse" data-bs-target="#collapse<?= $row['QuestionID'] ?>"
                                 aria-expanded="false" aria-controls="collapse<?= $row['QuestionID'] ?>">
                                 <?= $i ?>. <?= $row['Question'] ?>
                             </button>
                         </h2>
                         <div id="collapse<?= $row['QuestionID'] ?>"
-                            class="accordion-collapse collapse bg-dark text-white" aria-labelledby="flush-headingOne"
+                            class="accordion-collapse collapse rounded" aria-labelledby="flush-headingOne"
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
                                 <?php if($row['question_img']!=NULL):?>
@@ -114,17 +115,17 @@
                                 <div class="btn-group btn-group-sm mt-3" role="group"
                                     aria-label="Basic outlined example">
                                     <a href="<?= base_url('guru/edit_question/' . $courseID . '/' . $row['QuestionID']) ?>"
-                                        class="btn btn-outline-info" data-bs-toggle="modal"
+                                        class="btn btn-outline-success" data-bs-toggle="modal"
                                         data-bs-target="#edit<?= $row['QuestionID'] ?>"> <i class="fas fa-edit"></i>
                                         Edit</a>
                                     <a href="<?= base_url('guru/hapus_soal/' . $courseID . '/'  . $id . '/' . $row['QuestionID']) ?>"
-                                        class="btn btn-outline-warning rounded-end"><i class="fas fa-trash"></i>
+                                        class="btn btn-outline-danger rounded"><i class="fas fa-trash"></i>
                                         Hapus</a>
                                     <div class="modal" id="edit<?= $row['QuestionID'] ?>" tabindex="-1">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-body">
-                                                    <span class="text-white fw-bolder">Edit Soal</span>
+                                                    <span class="text-dark fw-bolder">Edit Soal</span>
                                                     <button type="button" class="btn-close float-end"
                                                         data-bs-dismiss="modal" aria-label="Close"></button>
                                                     <hr>
@@ -133,71 +134,71 @@
                                                         method="POST" enctype="multipart/form-data">
                                                         <input type="hidden" name="quizid" value="<?=$row['QuizID']?>">
                                                         <div class="col-12">
-                                                            <label class="">Pertanyaan </label>
-                                                            <textarea name="soal" class="form-control  text-white"
+                                                            <label class="text-dark">Pertanyaan </label>
+                                                            <textarea name="soal" class="form-control  text-dark"
                                                                 rows="5" required><?= $row['Question'] ?></textarea>
                                                         </div>
-                                                        <label class="mt-3">Pilihan Jawaban</label>
+                                                        <label class="mt-3 text-dark">Pilihan Jawaban</label>
                                                         <div class="row ms-1 mt-1">
-                                                            <div class="w-10 bg-warning rounded-start">
+                                                            <div class="w-10 bg-lightyellow rounded-start">
                                                                 <div class="fw-bold text-center mt-2">A</div>
                                                             </div>
                                                             <div class="w-90 ps-0">
                                                                 <input type="text" name='jawaban_1'
-                                                                    class="form-control rounded-0 rounded-end"
+                                                                    class="form-control rounded-0 rounded-end text-dark"
                                                                     placeholder="Pilihan Jawaban A"
                                                                     value="<?= $row['OptionA'] ?>" required>
                                                             </div>
                                                         </div>
                                                         <div class="row ms-1 mt-3">
-                                                            <div class="w-10 bg-warning rounded-start">
+                                                            <div class="w-10 bg-lightyellow rounded-start">
                                                                 <div class="fw-bold text-center mt-2">B</div>
                                                             </div>
                                                             <div class="w-90 ps-0">
                                                                 <input type="text" name='jawaban_2'
-                                                                    class="form-control rounded-0 rounded-end"
+                                                                    class="form-control rounded-0 rounded-end text-dark"
                                                                     placeholder="Pilihan Jawaban B"
                                                                     value="<?= $row['OptionB'] ?>" required>
                                                             </div>
                                                         </div>
                                                         <div class="row ms-1 mt-3">
-                                                            <div class="w-10 bg-warning rounded-start">
+                                                            <div class="w-10 bg-lightyellow rounded-start">
                                                                 <div class="fw-bold text-center mt-2">C</div>
                                                             </div>
                                                             <div class="w-90 ps-0">
                                                                 <input type="text" name='jawaban_3'
-                                                                    class="form-control rounded-0 rounded-end"
+                                                                    class="form-control rounded-0 rounded-end text-dark"
                                                                     placeholder="Pilihan Jawaban C"
                                                                     value="<?= $row['OptionC'] ?>" required>
                                                             </div>
                                                         </div>
                                                         <div class="row ms-1 mt-3">
-                                                            <div class="w-10 bg-warning rounded-start">
+                                                            <div class="w-10 bg-lightyellow rounded-start">
                                                                 <div class="fw-bold text-center mt-2">D</div>
                                                             </div>
                                                             <div class="w-90 ps-0">
                                                                 <input type="text" name='jawaban_4'
-                                                                    class="form-control rounded-0 rounded-end"
+                                                                    class="form-control rounded-0 rounded-end text-dark"
                                                                     placeholder="Pilihan Jawaban D"
                                                                     value="<?= $row['OptionD'] ?>" required>
                                                             </div>
                                                         </div>
                                                         <div class="row ms-1 mt-3">
-                                                            <div class="w-10 bg-warning rounded-start">
+                                                            <div class="w-10 bg-lightyellow rounded-start">
                                                                 <div class="fw-bold text-center mt-2">E</div>
                                                             </div>
                                                             <div class="w-90 ps-0">
                                                                 <input type="text" name='jawaban_5'
-                                                                    class="form-control rounded-0 rounded-end"
+                                                                    class="form-control rounded-0 rounded-end text-dark"
                                                                     placeholder="Pilihan Jawaban E"
                                                                     value="<?= $row['OptionE'] ?>" >
                                                             </div>
                                                         </div>
                                                         <div class="row mt-3">
                                                             <div class="col-md-2">
-                                                                <label for="inputState" class="">Jawaban Benar</label>
+                                                                <label for="inputState" class="text-dark">Jawaban Benar</label>
                                                                 <select id="inputState" name="TrueOption"
-                                                                    class="form-control border-0 bg-primary fw-bold"
+                                                                    class="form-control border-0 bg-lightyellow fw-bold text-dark text-center"
                                                                     >
 
                                                                     <option selected value="">Pilih</option>
@@ -219,9 +220,9 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-5">
-                                                                <label for="inputCity" class="">Gambar
+                                                                <label for="inputCity" class="text-dark">Gambar
                                                                     (Opsional)</label>
-                                                                <input type="file" name="file" class="form-control"
+                                                                <input type="file" name="file" class="form-control text-dark"
                                                                     id="inputCity">
                                                             </div>
                                                             <div class="col-md-3">
@@ -251,7 +252,7 @@
         } else {
             ?>
             <div class="card ">
-                <div class="card-body ">
+                <div class="card-body text-dark">
                     Anda Belum Membuat Soal
                 </div>
             </div>
@@ -260,9 +261,9 @@
         </div>
         <?php if(!empty($question)):?>
         <div class="col-md-3 mt-3 ">
-            <div class="card card-body bg-darkgreen">
-                <h1 class="text-white"><?=$countUserQuiz?></h1>
-                <p class="text-white small">Siswa telah mengerjakan quiz</p>
+            <div class="card card-body bg-lightyellow">
+                <h1 class="text-purple text-center"><?=$countUserQuiz?></h1>
+                <p class="text-dark small text-center">Siswa telah mengerjakan quiz</p>
                 <a href="<?=base_url()?>guru/resultquiz/<?= $course->CourseID ?>/<?=$quiz->QuizID?>"
                     class="btn btn-warning mt-3"><i class="fas fa-file-alt me-2"></i> Lihat Hasil</a>
             </div>
@@ -271,71 +272,71 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="addMateri" tabindex="-1" aria-labelledby="addMateriLabel" aria-hidden="true" style="">
+    <div class="modal fade" id="addMateri" tabindex="-1" aria-labelledby="addMateriLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered ">
             <div class="modal-content">
                 <div class="modal-body">
-                    <span class="text-white fw-bolder">Tambah Soal</span>
+                    <span class="text-dark fw-bolder">Tambah Soal</span>
                     <button type="button" class="btn-close float-end" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                     <hr>
                     <form action="<?= base_url('guru/create_question/' . $courseID . '/' . $id) ?>" method="POST"
                         enctype="multipart/form-data">
                         <div class="col-12">
-                            <label class="">Pertanyaan </label>
-                            <textarea name="soal" class="form-control  text-white" rows="5" required></textarea>
+                            <label class="text-dark">Pertanyaan </label>
+                            <textarea name="soal" class="form-control text-dark" rows="5" required></textarea>
                         </div>
-                        <label class="mt-3">Pilihan Jawaban</label>
-                        <div class="row ms-1 mt-1">
-                            <div class="w-10 bg-warning rounded-start">
+                        <label class="mt-3 text-dark">Pilihan Jawaban</label>
+                        <div class="row ms-1 mt-1 text-dark">
+                            <div class="w-10 bg-lightyellow rounded-start">
                                 <div class="fw-bold text-center mt-2">A</div>
                             </div>
                             <div class="w-90 ps-0">
-                                <input type="text" name='jawaban_1' class="form-control rounded-0 rounded-end"
+                                <input type="text" name='jawaban_1' class="form-control rounded-0 rounded-end text-dark"
                                     placeholder="Pilihan Jawaban A" required>
                             </div>
                         </div>
                         <div class="row ms-1 mt-3">
-                            <div class="w-10 bg-warning rounded-start">
+                            <div class="w-10 bg-lightyellow rounded-start">
                                 <div class="fw-bold text-center mt-2">B</div>
                             </div>
                             <div class="w-90 ps-0">
-                                <input type="text" name='jawaban_2' class="form-control rounded-0 rounded-end"
+                                <input type="text" name='jawaban_2' class="form-control rounded-0 rounded-end text-dark"
                                     placeholder="Pilihan Jawaban B" required>
                             </div>
                         </div>
                         <div class="row ms-1 mt-3">
-                            <div class="w-10 bg-warning rounded-start">
+                            <div class="w-10 bg-lightyellow rounded-start">
                                 <div class="fw-bold text-center mt-2">C</div>
                             </div>
                             <div class="w-90 ps-0">
-                                <input type="text" name='jawaban_3' class="form-control rounded-0 rounded-end"
+                                <input type="text" name='jawaban_3' class="form-control rounded-0 rounded-end text-dark"
                                     placeholder="Pilihan Jawaban C" required>
                             </div>
                         </div>
                         <div class="row ms-1 mt-3">
-                            <div class="w-10 bg-warning rounded-start">
+                            <div class="w-10 bg-lightyellow rounded-start">
                                 <div class="fw-bold text-center mt-2">D</div>
                             </div>
                             <div class="w-90 ps-0">
-                                <input type="text" name='jawaban_4' class="form-control rounded-0 rounded-end"
+                                <input type="text" name='jawaban_4' class="form-control rounded-0 rounded-end text-dark"
                                     placeholder="Pilihan Jawaban D" required>
                             </div>
                         </div>
                         <div class="row ms-1 mt-3">
-                            <div class="w-10 bg-warning rounded-start">
+                            <div class="w-10 bg-lightyellow rounded-start">
                                 <div class="fw-bold text-center mt-2">E</div>
                             </div>
                             <div class="w-90 ps-0">
-                                <input type="text" name='jawaban_5' class="form-control rounded-0 rounded-end"
+                                <input type="text" name='jawaban_5' class="form-control rounded-0 rounded-end text-dark"
                                     placeholder="Pilihan Jawaban E" >
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-2">
-                                <label for="inputState" class="">Jawaban Benar</label>
+                                <label for="inputState" class="text-dark">Jawaban Benar</label>
                                 <select id="inputState" name="TrueOption"
-                                    class="form-control border-0 bg-primary fw-bold" >
+                                    class="form-control border-0 bg-lightyellow fw-bold text-dark text-center" >
                                     <option selected value="">Pilih</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -345,8 +346,8 @@
                                 </select>
                             </div>
                             <div class="col-md-5">
-                                <label for="inputCity" class="">Gambar (Opsional)</label>
-                                <input type="file" name="file" class="form-control" id="inputCity">
+                                <label for="inputCity" class="text-dark">Gambar (Opsional)</label>
+                                <input type="file" name="file" class="form-control text-dark" id="inputCity">
                             </div>
                             <div class="col-md-3">
                                 <label for="inputCity" class=""></label>

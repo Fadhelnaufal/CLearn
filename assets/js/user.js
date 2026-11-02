@@ -80,6 +80,10 @@ $(document).ready(function () {
 //animejs
 var total_xp = document.getElementById("total_xp").value;
 var level = document.getElementById("level").value; 
+var mission = document.getElementById("mission").value; 
+var total_score_course = document.getElementById("score_course").value; 
+var total_xp_course = document.getElementById("total_xp_course").value;
+var level_course = document.getElementById("level_course").value; 
 anime({
 	targets: ".anime-xp input",
 	value: [0, total_xp],
@@ -90,6 +94,34 @@ anime({
 anime({
 	targets: ".anime-level input",
 	value: [0, level],
+	round: 1,
+	easing: "easeInOutExpo",
+});
+
+anime({
+	targets: ".anime-mission input",
+	value: [0, level],
+	round: 1,
+	easing: "easeInOutExpo",
+});
+
+anime({
+	targets: ".anime-score-course input",
+	value: [0, score_course],
+	round: 1,
+	easing: "easeInOutExpo",
+});
+
+anime({
+	targets: ".anime-xp-course input",
+	value: [0, total_xp_course],
+	round: 1,
+	easing: "easeInOutExpo",
+});
+
+anime({
+	targets: ".anime-level-course input",
+	value: [0, level_course],
 	round: 1,
 	easing: "easeInOutExpo",
 });

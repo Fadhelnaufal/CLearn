@@ -1,16 +1,16 @@
 <div class="container-fluid py-4">
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-md-10 mx-auto mt-5">
-            <div class="card bg-darkblue">
+            <div class="card bg-lightyellow">
                 <div class="card-body p-3">
                     <div class="text-center">
                         <img src="<?=base_url()?>media/avatar/<?=$profil->UserAvatar?>" class="profil-ava" alt="">
-                        <div class="mt-2 text-white fw-bold fs-4">
+                        <div class="mt-2 text-dark fw-bold fs-4">
                             <?=$this->session->userdata('nama'); ?>
                         </div>
                     </div>
                     <div class="col-md-8 mt-5 mx-auto">
-                        <div class="fw-bold text-white">
+                        <div class="fw-bold text-purple text-center">
                             Pilih Avatar
                         </div>
                         <div class="row mt-3">
@@ -35,11 +35,9 @@
                             </div>
                         </div>
                     </div> -->
-               
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 </main>

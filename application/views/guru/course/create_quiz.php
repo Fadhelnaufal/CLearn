@@ -33,15 +33,15 @@
             </div>
         </div>
     </div>
-    <p class="fw-bold text-white small mt-4 text-uppercase"> <i class="fas fa-dot-circle text-warning me-1"></i>buat
+    <p class="fw-bold text-dark small mt-4 text-uppercase"> <i class="fas fa-dot-circle text-warning me-1"></i>buat
         quiz</p>
 
     <div class="card card-body mt-3">
         <form id="add-quiz" method="post" action="<?= base_url('guru/create_quiz/' . $courseID . '/' . $id) ?>"
             enctype="multipart/form-data">
-            <label for="judul">Judul Quiz</label>
-            <input type="text" name='judul' class="form-control ">
-            <input type="submit" class="btn btn-primary float-right ml-auto mt-3" value="Buat Quiz">
+            <label for="judul" class="text-dark">Judul Quiz</label>
+            <input type="text" name='judul' class="form-control text-dark">
+            <input type="submit" class="btn btn-primary float-right ml-auto mt-3 text-dark" value="Buat Quiz">
         </form>
 
 

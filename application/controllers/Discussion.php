@@ -21,7 +21,7 @@ class Discussion extends CI_Controller
     $data = array(
       'title' => "Diskusi",
       'menu'  => 'Diskusi',
-       'user'        => $this->Course_model->getUser(),
+      'user'        => $this->Course_model->getUser(),
       'courseList' => $this->Course_model->getCourseSiswa()
     );
     $this->load->view('siswa/template/header', $data);
@@ -33,7 +33,7 @@ class Discussion extends CI_Controller
   {
     $data = array(
       'title' => "Semua Topik",
-       'user'        => $this->Course_model->getUser(),
+      'user'        => $this->Course_model->getUser(),
       'menu'  => 'Diskusi',
       'course_id' => $CourseID,
       'CourseName' => $this->M_Discussion->getCourseName($CourseID),

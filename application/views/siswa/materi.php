@@ -19,6 +19,8 @@
                     class="btn btn-disabled mb-0 course-menu shadow-none <?php if($course_menu=="Leaderboard"){echo "active-menu";}?>">Leaderboard</a>
                 <a href="<?=base_url()?>siswa/aktivitas/<?=$course->CourseID?>"
                     class="btn btn-disabled mb-0 course-menu shadow-none <?php if($course_menu=="Aktivitas"){echo "active-menu";}?>">Aktivitas</a>
+                <a href="<?=base_url()?>siswa/sertifikat/<?=$course->CourseID?>"
+                    class="btn btn-disabled mb-0 course-menu shadow-none <?php if($course_menu=="Sertifikat"){echo "active-menu";}?>">Sertifikat</a>
                 <a href="<?=base_url()?>siswa/teman/<?=$course->CourseID?>"
                     class="btn btn-disabled mb-0 course-menu shadow-none <?php if($course_menu=="Teman"){echo "active-menu";}?>">Teman </a>
                 <a href="<?=base_url()?>siswa/informasi/<?=$course->CourseID?>"
@@ -27,27 +29,36 @@
             </div>
         </div>
     </div>
-    <div class="card mt-4">
-        <div class="card-body text-white">
-            <p class="text-white fw-bolder fs-3"><?=$lesson->LessonTitle?></p>
-            <hr>
-            <p class="text-white"><?=$lesson->LessonContent?></p>
+    <p class="fw-bold text-dark small mt-4 text-uppercase"> <i class="fas fa-dot-circle text-warning me-1"></i>materi</p>
+    <div class="row mt-1">
+        <div class="col-md-9 mt-2">
+            <div class="card card-body text-dark">
+                <p class="text-dark fw-bolder fs-3"><?=$lesson->LessonTitle?></p>
+                <hr>
+                <p class="text-dark "><?=$lesson->LessonContent?></p>
+            </div>
         </div>
-    </div>
-    <?php if($lesson->File!=""):?>
-    <div class="card mt-4">
-        <div class="card-body">
-            <p class="text-white fw-bold fs-5">Berkas Lampiran</p>
-            <p class="text-white"><i class="fas fa-file me-2"></i> <?=$lesson->File?> </p>
-            <a href="<?= base_url('assets/lesson/' . $lesson->File) ?>" target="_blank" class="btn btn-primary"><i class="fas fa-download me-2"></i> Download</a>
+        
+        <div class="col-md-3">
+            <?php if($lesson->File!=""):?>
+            <div class="card card-body mt-4">
+                <p class="text-dark text-center fw-bold fs-5"><i class="fas fa-dot-circle text-warning me-1"></i>Berkas Lampiran</p>
+                <p class="text-dark text-center "><i class="fas fa-file me-2 mt-3"></i> <?=$lesson->File?> </p>
+                <a href="<?= base_url('assets/lesson/' . $lesson->File) ?>" target="_blank" class="btn btn-primary mt-3"><i class="fas fa-download me-2"></i> Download</a>
+            </div>
+            <?php endif;?>
+            <div class="card card-body mt-4 d-none d-sm-block">
+                <img src="<?=base_url()?>assets/img/vector/Artboard 10.svg" class="w-100" alt="gambar guru">
+            </div>
         </div>
+        
     </div>
-    <?php endif;?>
+
     <?php if($check==0):?>
     <form action="<?=base_url()?>Lesson/complete/" method="post">
         <input type="hidden" name="lesson" value="<?=$lesson->LessonID?>">
         <input type="hidden" name="course" value="<?=$lesson->ID_Course?>">
-        <input type="submit" class="form-control  bg-warning btn btn-warning mt-4 text-wrap" value="Saya sudah mempelajari <?=$lesson->LessonTitle?>">
+        <input type="submit" class="form-control bg-warning btn btn-warning mt-4 text-wrap" value="Saya sudah mempelajari <?=$lesson->LessonTitle?>">
     </form>
     <?php else:?>
     <a href="<?=base_url()?>lesson/course/<?=$lesson->ID_Course?>" class="btn btn-primary mt-4">Kembali</a>
